@@ -9,13 +9,20 @@ const GlobalStyle = createGlobalStyle`${reset}; body{background-color:#ecf0f1}`;
 class AppContainer extends Component {
   constructor(props) {
     super(props);
-
+    this._deleteNotification = (id) => {
+      this.setState((curr) => {
+        const newState = delete curr.notifications[id];
+        console.log(newState);
+        return newState;
+      });
+    };
     this.state = {
       notifications: {
         1: { id: 1, text: "running", seen: false },
         2: { id: 2, text: "coding", seen: false },
         3: { id: 3, text: "eating", seen: false },
       },
+      deleteNotification: this._deleteNotification,
     };
   }
 
