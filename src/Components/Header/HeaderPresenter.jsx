@@ -8,6 +8,8 @@ const Header = styled.header`
   background-color: #ecf0f1;
   padding: 0 40px;
   margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 20px;
 `;
 
 const HeaderIcon = styled.span`
