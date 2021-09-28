@@ -9,14 +9,14 @@ const GlobalStyle = createGlobalStyle`${reset}; body{background-color:#ecf0f1}`;
 class AppContainer extends Component {
   constructor(props) {
     super(props);
-    this._changeMessage = () => {
-      if (this.state.message === "hello") {
-        this.setState({ message: "bye bye" });
-      } else {
-        this.setState({ message: "hello" });
-      }
+
+    this.state = {
+      notifications: {
+        1: { id: 1, text: "running", seen: false },
+        2: { id: 2, text: "coding", seen: false },
+        3: { id: 3, text: "eating", seen: false },
+      },
     };
-    this.state = { message: "hello", changeMessage: this._changeMessage };
   }
 
   render() {
