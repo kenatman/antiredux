@@ -16,6 +16,17 @@ class AppContainer extends Component {
         return newState;
       });
     };
+    this._seeNotification = (id) => {
+      this.setState((curr) => {
+        return {
+          ...curr,
+          notifications: {
+            ...curr.notifications,
+            [id]: { ...curr.notifications[id], seen: true },
+          },
+        };
+      });
+    };
     this.state = {
       notifications: {
         1: { id: 1, text: "running", seen: false },
@@ -23,6 +34,7 @@ class AppContainer extends Component {
         3: { id: 3, text: "eating", seen: false },
       },
       deleteNotification: this._deleteNotification,
+      seeNotification: this._seeNotification,
     };
   }
 
